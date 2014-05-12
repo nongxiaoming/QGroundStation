@@ -16,73 +16,9 @@
 # along with QGroundControl. If not, see <http://www.gnu.org/licenses/>.
 # -------------------------------------------------
 
-message(Qt version $$[QT_VERSION])
-# Setup our supported build types. We do this once here and then use the defined config scopes
-# to allow us to easily modify suported build types in one place instead of duplicated throughout
-# the project file.
+TEMPLATE=subdirs
+CONFIG += ordered
+SUBDIRS += groundstation\
+           libraries
 
-linux-g++ | linux-g++-64 {
-    message(Linux build)
-    CONFIG += LinuxBuild
-}
-win32-msvc*win32-g++ {
-    message(Windows build)
-    CONFIG += WindowsBuild
-}
-win32-g++ | win32-g++-64 {
-    message(Windows build)
-    CONFIG += WindowsBuild
-}
-macx-clang | macx-llvm {
-    message(Mac build)
-    CONFIG += MacBuild
-}
-
-
-# Setup our build directories
-
-BASEDIR = $${IN_PWD}
-DebugBuild {
-    DESTDIR = $${OUT_PWD}/debug
-    BUILDDIR = $${OUT_PWD}/build-debug
-}
-ReleaseBuild {
-    DESTDIR = $${OUT_PWD}/release
-    BUILDDIR = $${OUT_PWD}/build-release
-}
-OBJECTS_DIR = $${BUILDDIR}/obj
-MOC_DIR = $${BUILDDIR}/moc
-UI_DIR = $${BUILDDIR}/ui
-RCC_DIR = $${BUILDDIR}/rcc
-LANGUAGE = C++
-
-message(BASEDIR $$BASEDIR DESTDIR $$DESTDIR TARGET $$TARGET)
-
-# Qt configuration
-CONFIG += qt \
-    thread
-
-QT       += core gui\
-         opengl \
-          svg \
-           xml \
-          webkit \
-          sql \
-          declarative
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = QGroundStation
-TEMPLATE = app
-
-#源文件
-SOURCES += groundstation/main.cpp\
-        groundstation/mainwindow.cpp
-#头文件
-HEADERS  += groundstation/mainwindow.h
-#界面文件
-FORMS    += groundstation/mainwindow.ui
-#包含的目录
-INCLUDEPATH += .\
-    groundstation \
 
