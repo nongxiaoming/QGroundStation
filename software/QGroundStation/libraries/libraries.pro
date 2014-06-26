@@ -7,6 +7,6 @@ SUBDIRS   = \
     aggregation \
     glc_lib \
     utils \
-    qwt
+    qwt\
+	qchart
 
-SUBDIRS +=
