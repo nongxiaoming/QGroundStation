@@ -14,7 +14,7 @@ HEADERS = chart.h\
         datacontainers.h\
         scalegrid.h\
         widgetwithbackground.h\
-        functions.h\
+        functions.h
 
 SOURCES = chart.cpp\
          chartdecorator.cpp\
