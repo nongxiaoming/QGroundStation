@@ -34,7 +34,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = QGroundStation
 TEMPLATE = app
 
-include(libraries.pri)
 #源文件
 SOURCES += main.cpp\
         mainwindow.cpp
@@ -44,3 +43,4 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 #包含的目录
 INCLUDEPATH +=.
+LIBS +=-L$$PROJECT_LIBDIR
