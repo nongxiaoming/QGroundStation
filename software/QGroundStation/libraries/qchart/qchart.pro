@@ -30,3 +30,6 @@ SOURCES = chart.cpp\
 INCLUDEPATH += standard
 #指定生成的lib保存目录
 DESTDIR=$${PROJECT_LIBDIR}
+#指定包含的目录
+PROJECT_LIBS+=-lQChart
+PROJECT_INCLUDEPATH+=$${PWD}/libraries/qchart
