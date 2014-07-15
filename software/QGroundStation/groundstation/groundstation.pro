@@ -43,4 +43,8 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 #包含的目录
 INCLUDEPATH +=.
+#../libraries/qchart
+INCLUDEPATH +=$${PROJECT_INCLUDEPATH}
 LIBS +=-L$$PROJECT_LIBDIR
+LIBS +=-lQChart
+#LIBS +=$${PROJECT_LIBS}
