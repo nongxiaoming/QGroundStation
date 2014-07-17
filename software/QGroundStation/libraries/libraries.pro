@@ -8,5 +8,6 @@ SUBDIRS   = \
     glc_lib \
     utils \
     qwt\
-	qchart
+	qchart\
+	dial
 
