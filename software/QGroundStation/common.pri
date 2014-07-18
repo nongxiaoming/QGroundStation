@@ -13,10 +13,11 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
-# along with QGroundControl. If not, see <http://www.gnu.org/licenses/>.
+# along with QGroundStation. If not, see <http://www.gnu.org/licenses/>.
 # -------------------------------------------------
 
 message(Qt version $$[QT_VERSION])
+
 # Setup our supported build types. We do this once here and then use the defined config scopes
 # to allow us to easily modify suported build types in one place instead of duplicated throughout
 # the project file.
@@ -25,7 +26,7 @@ linux-g++ | linux-g++-64 {
     message(Linux build)
     CONFIG += LinuxBuild
 }
-win32-msvc*win32-g++ {
+win32-msvc* {
     message(Windows build)
     CONFIG += WindowsBuild
 }
@@ -37,7 +38,23 @@ macx-clang | macx-llvm {
     message(Mac build)
     CONFIG += MacBuild
 }
-# Setup our build directories
+
+#定义qtLibraryName替换宏
+defineReplace(qtLibraryName) {
+   unset(LIBRARY_NAME)
+   LIBRARY_NAME = $$1
+   CONFIG(debug, debug|release) {
+      !debug_and_release|build_pass {
+          mac:RET = $$member(LIBRARY_NAME, 0)_debug
+              else:win32:RET = $$member(LIBRARY_NAME, 0)d
+      }
+   }
+   isEmpty(RET):RET = $$LIBRARY_NAME
+   return($$RET)
+}
+
+
+# 设置编译目录环境
 
 BASEDIR = $${IN_PWD}
 DebugBuild {
@@ -60,9 +77,19 @@ PROJECT_INCLUDEPATH = $${PWD}/libraries
 
 PROJECT_LIBS += -l$$QChart
 PROJECT_INCLUDEPATH += $${PWD}/libraries/qchart
-
+#设置语言为C++
 LANGUAGE = C++
 
+#如果工程模板为lib,替换TARGET名称
+equals(TEMPLATE,lib)
+{
+TARGET = $$qtLibraryName($$TARGET)
+}
 message(BASEDIR $$BASEDIR DESTDIR $$DESTDIR TARGET $$TARGET)
 message(PROJECT_LIBS $$PROJECT_LIBS)
 message(PROJECT_INCLUDEPATH $$PROJECT_INCLUDEPATH)
+#包含的头文件目录
+INCLUDEPATH += PROJECT_INCLUDEPATH\
+              ..
+#需要用到的库
+LIBS +=-L$$PROJECT_LIBDIR
