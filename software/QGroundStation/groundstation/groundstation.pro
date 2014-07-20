@@ -19,7 +19,7 @@
 include(../common.pri)
 # Qt configuration
 CONFIG += qt \
-    thread
+         thread
 
 QT       += core gui\
          opengl \
@@ -27,24 +27,70 @@ QT       += core gui\
            xml \
           webkit \
           sql \
-          declarative
+          declarative\
+          network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QGroundStation
 TEMPLATE = app
 
+win32 {
+    RC_FILE = openpilotgcs.rc
+    target.path = /bin
+    INSTALLS += target
+} else:macx {
+    LIBS += -framework CoreFoundation
+    ICON = openpilotgcs.icns
+    QMAKE_INFO_PLIST = Info.plist
+    FILETYPES.files = profile.icns prifile.icns
+    FILETYPES.path = Contents/Resources
+    QMAKE_BUNDLE_DATA += FILETYPES
+} else {
+    target.path  = /bin
+    INSTALLS    += target
+}
+
+OTHER_FILES += openpilotgcs.rc
+
+RESOURCES += \
+    appresources.qrc
+
 #源文件
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp\
+        gcssplashscreen.cpp\
+       qtsingleapplication/qtsingleapplication.cpp\
+       qtsingleapplication/qtlocalpeer.cpp\
+       qtlockedfile/qtlockedfile.cpp
 #头文件
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h\
+         gcssplashscreen.h\
+         qtsingleapplication/qtsingleapplication.h\
+         qtsingleapplication/qtlocalpeer.h\
+         qtlockedfile/qtlockedfile.h
+
+
+unix:SOURCES += qtlockedfile/qtlockedfile_unix.cpp
+win32:SOURCES += qtlockedfile/qtlockedfile_win.cpp
+
+win32:contains(TEMPLATE, lib):contains(CONFIG, shared) {
+    DEFINES += QT_QTLOCKEDFILE_EXPORT=__declspec(dllexport)
+    DEFINES += QT_QTSINGLEAPPLICATION_EXPORT=__declspec(dllexport)
+}
 #界面文件
 FORMS    += mainwindow.ui
 #包含的目录
 INCLUDEPATH +=.
-#../libraries/qchart
 INCLUDEPATH +=$${PROJECT_INCLUDEPATH}
+
 LIBS +=-L$$PROJECT_LIBDIR
-LIBS +=-lQChart
+#用到的lib
+LIBS +=-l$$qtLibraryName(QChart)\
+       -l$$qtLibraryName(PFDGadget)\
+       -l$$qtLibraryName(Core)\
+       -l$$qtLibraryName(DialGadget)\
+       -l$$qtLibraryName(VersionInfo)\
+       -l$$qtLibraryName(ExtensionSystem)\
+       -l$$qtLibraryName(Utils)
 #LIBS +=$${PROJECT_LIBS}

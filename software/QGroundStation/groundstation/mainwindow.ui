@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>691</width>
-      <height>341</height>
+      <width>251</width>
+      <height>71</height>
      </rect>
     </property>
    </widget>
@@ -50,7 +50,7 @@
   <customwidget>
    <class>Chart</class>
    <extends>QWidget</extends>
-   <header location="global">chart.h</header>
+   <header>chart.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
