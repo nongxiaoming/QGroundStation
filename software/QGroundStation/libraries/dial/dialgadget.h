@@ -29,7 +29,7 @@
 #ifndef DIALGADGET_H_
 #define DIALGADGET_H_
 
-//#include <coreplugin/iuavgadget.h>
+#include <coreplugin/iuavgadget.h>
 #include "dialgadgetwidget.h"
 
 class IUAVGadget;

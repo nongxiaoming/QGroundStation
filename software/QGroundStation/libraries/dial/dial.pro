@@ -2,7 +2,8 @@ TEMPLATE = lib
 TARGET = DialGadget
 QT += svg
 QT += opengl
-#include(../../openpilotgcsplugin.pri)
+
+include(../../common.pri)
 #include(../../plugins/coreplugin/coreplugin.pri)
 #include(dial_dependencies.pri)
 HEADERS +=
@@ -20,3 +21,13 @@ SOURCES += dialgadgetoptionspage.cpp
 OTHER_FILES += DialGadget.pluginspec
 FORMS += dialgadgetoptionspage.ui
 RESOURCES += dial.qrc
+
+#依赖的库文件
+LIBS += -l$$qtLibraryName(Aggregation)\
+        -l$$qtLibraryName(Core)\
+        -l$$qtLibraryName(ExtensionSystem)\
+        -l$$qtLibraryName(Utils)\
+        -l$$qtLibraryName(UAVObjects)
+
+#指定生成的lib保存目录
+DESTDIR=$${PROJECT_LIBDIR}
