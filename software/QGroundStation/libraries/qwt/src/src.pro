@@ -15,7 +15,7 @@ DEFINES += QWT_LIBRARY
 
 QT += printsupport
 
-include(../../common.pri)
+include(../../../common.pri)
 include( ../qwtconfig.pri )
 
 #VVERSION = $$[QT_VERSION]
