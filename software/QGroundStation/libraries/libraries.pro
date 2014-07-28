@@ -7,7 +7,11 @@ SUBDIRS   = \
     aggregation \
     glc_lib \
     utils \
+    version_info\
     qwt\
 	qchart\
-	dial
+        pfd\
+uavobjects\
+extensionsystem\
+modelview\
 
