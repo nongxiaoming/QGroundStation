@@ -4,3 +4,4 @@ CONFIG   += ordered
 SUBDIRS   = \
       coreplugin\
       dial\
+      uavobjects\
