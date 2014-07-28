@@ -73,10 +73,7 @@ RCC_DIR = $${BUILDDIR}/rcc
 PROJECT_BINDIR = $${PWD}/bin
 PROJECT_LIBDIR = $${PWD}/lib
 PROJECT_LIBS = -L$${PWD}/lib
-PROJECT_INCLUDEPATH = $${PWD}/libraries
 
-PROJECT_LIBS += -l$$QChart
-PROJECT_INCLUDEPATH += $${PWD}/libraries/qchart
 #设置语言为C++
 LANGUAGE = C++
 
@@ -87,9 +84,10 @@ TARGET = $$qtLibraryName($$TARGET)
 }
 message(BASEDIR $$BASEDIR DESTDIR $$DESTDIR TARGET $$TARGET)
 message(PROJECT_LIBS $$PROJECT_LIBS)
-message(PROJECT_INCLUDEPATH $$PROJECT_INCLUDEPATH)
+
 #包含的头文件目录
-INCLUDEPATH += PROJECT_INCLUDEPATH\
-              ..
+INCLUDEPATH += $${PWD}/libraries\
+               $${PWD}/plugins
+
 #需要用到的库
 LIBS +=-L$$PROJECT_LIBDIR

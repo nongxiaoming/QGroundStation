@@ -19,6 +19,7 @@
 TEMPLATE=subdirs
 CONFIG += ordered
 SUBDIRS += groundstation\
-           libraries
+           libraries\
+           plugins
 
 
