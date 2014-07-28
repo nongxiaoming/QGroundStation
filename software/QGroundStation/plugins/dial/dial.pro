@@ -4,8 +4,7 @@ QT += svg
 QT += opengl
 
 include(../../common.pri)
-#include(../../plugins/coreplugin/coreplugin.pri)
-#include(dial_dependencies.pri)
+
 HEADERS += dialplugin.h
 HEADERS += dialgadget.h
 HEADERS += dialgadgetwidget.h

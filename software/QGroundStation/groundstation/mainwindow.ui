@@ -50,7 +50,7 @@
   <customwidget>
    <class>Chart</class>
    <extends>QWidget</extends>
-   <header>chart.h</header>
+   <header location="global">qchart/chart.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

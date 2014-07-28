@@ -6,3 +6,4 @@ SUBDIRS   = \
       dial\
       uavobjects\
       modelview\
+      gpsdisplay\
