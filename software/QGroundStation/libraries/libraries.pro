@@ -10,8 +10,5 @@ SUBDIRS   = \
     version_info\
     qwt\
 	qchart\
-        pfd\
-uavobjects\
 extensionsystem\
-modelview\
 
