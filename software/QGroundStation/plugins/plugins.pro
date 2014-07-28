@@ -5,3 +5,4 @@ SUBDIRS   = \
       coreplugin\
       dial\
       uavobjects\
+      modelview\
