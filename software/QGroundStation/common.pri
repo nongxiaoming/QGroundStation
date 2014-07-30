@@ -70,9 +70,12 @@ MOC_DIR = $${BUILDDIR}/moc
 UI_DIR = $${BUILDDIR}/ui
 RCC_DIR = $${BUILDDIR}/rcc
 
-PROJECT_BINDIR = $${PWD}/bin
-PROJECT_LIBDIR = $${PWD}/lib
-PROJECT_LIBS = -L$${PWD}/lib
+#设置可执行文件生成目录
+PROJECT_BINDIR = $${DESTDIR}/bin
+#设置libraries生成目录
+PROJECT_LIBRARYDIR = $${DESTDIR}/libraries
+#设置plugins生成目录
+PROJECT_PLUGINSDIR = $${DESTDIR}/plugins
 
 #设置语言为C++
 LANGUAGE = C++
@@ -83,11 +86,10 @@ equals(TEMPLATE,lib)
 TARGET = $$qtLibraryName($$TARGET)
 }
 message(BASEDIR $$BASEDIR DESTDIR $$DESTDIR TARGET $$TARGET)
-message(PROJECT_LIBS $$PROJECT_LIBS)
 
 #包含的头文件目录
 INCLUDEPATH += $${PWD}/libraries\
                $${PWD}/plugins
 
 #需要用到的库
-LIBS +=-L$$PROJECT_LIBDIR
+LIBS +=-L$$PROJECT_LIBRARYDIR

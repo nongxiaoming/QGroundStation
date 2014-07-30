@@ -82,9 +82,7 @@ win32:contains(TEMPLATE, lib):contains(CONFIG, shared) {
 FORMS    += mainwindow.ui
 #包含的目录
 INCLUDEPATH +=.
-INCLUDEPATH +=$${PROJECT_INCLUDEPATH}
 
-LIBS +=-L$$PROJECT_LIBDIR
 #用到的lib
 LIBS +=-l$$qtLibraryName(QChart)\
        -l$$qtLibraryName(PFDGadget)\
@@ -93,4 +91,6 @@ LIBS +=-l$$qtLibraryName(QChart)\
        -l$$qtLibraryName(VersionInfo)\
        -l$$qtLibraryName(ExtensionSystem)\
        -l$$qtLibraryName(Utils)
-#LIBS +=$${PROJECT_LIBS}
+
+#指定生成的app保存目录
+DESTDIR=$${PROJECT_BINDIR}
