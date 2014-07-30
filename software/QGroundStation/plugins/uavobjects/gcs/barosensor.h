@@ -33,8 +33,8 @@
 #ifndef BAROSENSOR_H
 #define BAROSENSOR_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT BaroSensor: public UAVDataObject
 {

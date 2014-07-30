@@ -33,8 +33,8 @@
 #ifndef ACCESSORYDESIRED_H
 #define ACCESSORYDESIRED_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT AccessoryDesired: public UAVDataObject
 {

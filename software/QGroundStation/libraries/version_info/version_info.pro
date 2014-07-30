@@ -7,7 +7,7 @@ HEADERS = version_info.h
 SOURCES = version_info.cpp
 
 #指定生成的lib保存目录
-DESTDIR=$${PROJECT_LIBDIR}
+DESTDIR=$$PROJECT_LIBRARYDIR
 
 #
 # This qmake code generates VersionInfo class implementation.

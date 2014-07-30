@@ -33,8 +33,8 @@
 #ifndef ACCELSENSOR_H
 #define ACCELSENSOR_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT AccelSensor: public UAVDataObject
 {

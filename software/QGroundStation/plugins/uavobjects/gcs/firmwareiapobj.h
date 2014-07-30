@@ -33,8 +33,8 @@
 #ifndef FIRMWAREIAPOBJ_H
 #define FIRMWAREIAPOBJ_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT FirmwareIAPObj: public UAVDataObject
 {

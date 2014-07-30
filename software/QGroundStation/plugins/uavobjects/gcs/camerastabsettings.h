@@ -33,8 +33,8 @@
 #ifndef CAMERASTABSETTINGS_H
 #define CAMERASTABSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT CameraStabSettings: public UAVDataObject
 {

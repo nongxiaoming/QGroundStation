@@ -33,8 +33,8 @@
 #ifndef OBJECTPERSISTENCE_H
 #define OBJECTPERSISTENCE_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT ObjectPersistence: public UAVDataObject
 {

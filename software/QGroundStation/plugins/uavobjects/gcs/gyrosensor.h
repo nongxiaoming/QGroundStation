@@ -33,8 +33,8 @@
 #ifndef GYROSENSOR_H
 #define GYROSENSOR_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT GyroSensor: public UAVDataObject
 {

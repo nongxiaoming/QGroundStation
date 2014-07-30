@@ -155,5 +155,5 @@ LIBS += -l$$qtLibraryName(Aggregation)\
         -l$$qtLibraryName(ExtensionSystem)\
         -l$$qtLibraryName(Utils)\
         -l$$qtLibraryName(VersionInfo)
-#指定生成的lib保存目录
-DESTDIR=$${PROJECT_LIBDIR}
+#指定生成的plugin保存目录
+DESTDIR=$$PROJECT_PLUGINSDIR

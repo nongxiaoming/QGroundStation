@@ -8,3 +8,13 @@ SUBDIRS   = \
       modelview\
       gpsdisplay\
       ophid\
+	  config\
+	  consolegadget\
+	  debuggadget\
+	  antennatrack\
+	  donothing\
+	  emptygadget\
+	  flightlog\
+	  gcscontrol\
+	  hitl\
+	  

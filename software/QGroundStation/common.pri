@@ -60,10 +60,12 @@ BASEDIR = $${IN_PWD}
 DebugBuild {
     DESTDIR = $${OUT_PWD}/debug
     BUILDDIR = $${OUT_PWD}/build-debug
+    OUTDIR_NAME = debug
 }
 ReleaseBuild {
     DESTDIR = $${OUT_PWD}/release
     BUILDDIR = $${OUT_PWD}/build-release
+    OUTDIR_NAME = release
 }
 OBJECTS_DIR = $${BUILDDIR}/obj
 MOC_DIR = $${BUILDDIR}/moc
@@ -71,11 +73,11 @@ UI_DIR = $${BUILDDIR}/ui
 RCC_DIR = $${BUILDDIR}/rcc
 
 #设置可执行文件生成目录
-PROJECT_BINDIR = $${DESTDIR}/bin
+PROJECT_BINDIR = $${PWD}/$${OUTDIR_NAME}/bin
 #设置libraries生成目录
-PROJECT_LIBRARYDIR = $${DESTDIR}/libraries
+PROJECT_LIBRARYDIR = $${PWD}/$${OUTDIR_NAME}/libraries
 #设置plugins生成目录
-PROJECT_PLUGINSDIR = $${DESTDIR}/plugins
+PROJECT_PLUGINSDIR = $${PWD}/$${OUTDIR_NAME}/plugins
 
 #设置语言为C++
 LANGUAGE = C++
@@ -93,3 +95,4 @@ INCLUDEPATH += $${PWD}/libraries\
 
 #需要用到的库
 LIBS +=-L$$PROJECT_LIBRARYDIR
+LIBS +=-L$$PROJECT_PLUGINSDIR

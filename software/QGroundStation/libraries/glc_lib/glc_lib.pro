@@ -516,4 +516,4 @@ OTHER_FILES += \
     qtc_packaging/debian_harmattan/changelog
 
 #指定生成的lib保存目录
-DESTDIR=$${PROJECT_LIBDIR}
+DESTDIR=$$PROJECT_LIBRARYDIR
