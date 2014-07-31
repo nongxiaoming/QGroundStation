@@ -30,6 +30,7 @@
 #define PATHUTILS_H
 
 #include "utils_global.h"
+#include "extensionsystem/pluginmanager.h"
 #include <QDir>
 #include <QtWidgets/QApplication>
 #include <QSettings>

@@ -30,7 +30,7 @@
 #include <stdint.h>
 #include <QDebug>
 
-#define DATA_BASENAME "QGroundStation"
+
 namespace Utils {
 PathUtils::PathUtils()
 {}
@@ -50,7 +50,7 @@ QString PathUtils::GetDataPath()
     const QString rootDirPath = rootDir.canonicalPath();
     QString dataPath = rootDirPath;
     dataPath += QLatin1Char('/');
-    dataPath += QLatin1String(DATA_BASENAME);
+    dataPath += QLatin1String("QGroundStation");
     dataPath += QLatin1Char('/');
     return dataPath;
 }

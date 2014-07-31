@@ -46,6 +46,7 @@ SOURCES += reloadpromptutils.cpp \
     fancymainwindow.cpp \
     detailsbutton.cpp \
     detailswidget.cpp \
+    coordinateconversions.cpp \
     pathutils.cpp \
 	worldmagmodel.cpp \
 	homelocationutil.cpp \
@@ -124,7 +125,6 @@ FORMS += filewizardpage.ui \
     newclasswidget.ui \
     submiteditorwidget.ui \
 	checkablemessagebox.ui
-INCLUDEPATH +=.\
 
 RESOURCES += utils.qrc
 

@@ -26,10 +26,10 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-#include <savedaction.h>
+#include <utils/savedaction.h>
 
-#include <qtcassert.h>
-#include <pathchooser.h>
+#include <utils/qtcassert.h>
+#include <utils/pathchooser.h>
 
 #include <QtCore/QDebug>
 #include <QtCore/QSettings>

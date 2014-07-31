@@ -29,7 +29,7 @@
 #include "newclasswidget.h"
 #include "ui_newclasswidget.h"
 
-#include <filewizardpage.h>
+#include <utils/filewizardpage.h>
 
 #include <QFileDialog>
 #include <QtCore/QFileInfo>
