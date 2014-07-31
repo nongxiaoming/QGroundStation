@@ -28,10 +28,10 @@
 #define DEFAULTATTITUDEWIDGET_H
 
 #include "ui_defaultattitude.h"
-#include "../uavobjectwidgetutils/configtaskwidget.h"
+#include "uavobjectwidgetutils/configtaskwidget.h"
 #include "extensionsystem/pluginmanager.h"
-#include "uavobjectmanager.h"
-#include "uavobject.h"
+#include "uavobjects/uavobjectmanager.h"
+#include "uavobjects/uavobject.h"
 #include <QWidget>
 #include <QTimer>
 #include <QMutex>

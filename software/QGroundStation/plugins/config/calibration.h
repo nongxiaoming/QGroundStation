@@ -1,7 +1,7 @@
 #ifndef AHRS_CALIBRATION_HPP
 #define AHRS_CALIBRATION_HPP
 
-#include <Eigen/Core>
+#include <eigen/Eigen/Core>
 #include <cstdlib>
 using std::size_t;
 using namespace Eigen;

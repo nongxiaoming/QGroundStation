@@ -17,4 +17,8 @@ SUBDIRS   = \
 	  flightlog\
 	  gcscontrol\
 	  hitl\
-	  
+	  uavobjectutil\
+	  uavobjectwidgetutils\
+          uavsettingsimportexport\
+          telemetry\
+          uavtalk\

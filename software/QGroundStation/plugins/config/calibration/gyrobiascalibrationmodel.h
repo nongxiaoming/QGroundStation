@@ -31,14 +31,14 @@
 
 #include "wizardmodel.h"
 #include "extensionsystem/pluginmanager.h"
-#include "uavobjectmanager.h"
-#include "uavobject.h"
+#include "uavobjects/uavobjectmanager.h"
+#include "uavobjects/uavobject.h"
 
-#include <gyrostate.h>
-#include <gyrosensor.h>
-#include <attitudesettings.h>
-#include <revocalibration.h>
-#include <accelgyrosettings.h>
+#include <uavobjects/gcs/gyrostate.h>
+#include <uavobjects/gcs/gyrosensor.h>
+#include <uavobjects/gcs/attitudesettings.h>
+#include <uavobjects/gcs/revocalibration.h>
+#include <uavobjects/gcs/accelgyrosettings.h>
 
 #include <QObject>
 

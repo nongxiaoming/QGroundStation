@@ -29,11 +29,11 @@
 #include "outputchannelform.h"
 #include "configvehicletypewidget.h"
 
-#include "mixersettings.h"
-#include "actuatorcommand.h"
-#include "actuatorsettings.h"
-#include "systemalarms.h"
-#include "systemsettings.h"
+#include "uavobjects/gcs/mixersettings.h"
+#include "uavobjects/gcs/actuatorcommand.h"
+#include "uavobjects/gcs/actuatorsettings.h"
+#include "uavobjects/gcs/systemalarms.h"
+#include "uavobjects/gcs/systemsettings.h"
 #include "uavsettingsimportexport/uavsettingsimportexportfactory.h"
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>

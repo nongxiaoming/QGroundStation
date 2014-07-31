@@ -24,18 +24,18 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-#include "configccattitudewidget.h"
-#include "ui_ccattitude.h"
-#include "utils/coordinateconversions.h"
-#include "attitudesettings.h"
 #include <QMutexLocker>
 #include <QMessageBox>
 #include <QDebug>
 #include <QDesktopServices>
 #include <QUrl>
-#include "accelstate.h"
-#include "accelgyrosettings.h"
-#include "gyrostate.h"
+#include "configccattitudewidget.h"
+#include "ui_ccattitude.h"
+#include "utils/coordinateconversions.h"
+#include "uavobjects/gcs/attitudesettings.h"
+#include "uavobjects/gcs/accelstate.h"
+#include "uavobjects/gcs/accelgyrosettings.h"
+#include "uavobjects/gcs/gyrostate.h"
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>
 #include <calibration/calibrationutils.h>

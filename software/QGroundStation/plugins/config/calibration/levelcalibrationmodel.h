@@ -30,8 +30,8 @@
 
 #include "wizardmodel.h"
 #include "calibration/calibrationutils.h"
-#include <attitudestate.h>
-#include <attitudesettings.h>
+#include <uavobjects/gcs/attitudestate.h>
+#include <uavobjects/gcs/attitudesettings.h>
 
 #include <QObject>
 #include <QMutex>

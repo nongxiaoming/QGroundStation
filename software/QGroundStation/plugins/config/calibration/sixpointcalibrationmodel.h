@@ -30,11 +30,11 @@
 
 #include "wizardmodel.h"
 #include "calibration/calibrationutils.h"
-#include <revocalibration.h>
-#include <accelgyrosettings.h>
-#include <homelocation.h>
-#include <accelstate.h>
-#include <magstate.h>
+#include <uavobjects/gcs/revocalibration.h>
+#include <uavobjects/gcs/accelgyrosettings.h>
+#include <uavobjects/gcs/homelocation.h>
+#include <uavobjects/gcs/accelstate.h>
+#include <uavobjects/gcs/magstate.h>
 
 #include <QMutex>
 #include <QObject>

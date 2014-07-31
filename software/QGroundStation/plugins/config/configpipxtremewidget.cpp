@@ -28,8 +28,8 @@
 #include "configpipxtremewidget.h"
 
 #include <coreplugin/generalsettings.h>
-#include <oplinksettings.h>
-#include <oplinkstatus.h>
+#include <uavobjects/gcs/oplinksettings.h>
+#include <uavobjects/gcs/oplinkstatus.h>
 #include <QMessageBox>
 
 ConfigPipXtremeWidget::ConfigPipXtremeWidget(QWidget *parent) : ConfigTaskWidget(parent)

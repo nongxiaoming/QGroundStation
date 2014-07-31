@@ -1,13 +1,13 @@
 /**
  ******************************************************************************
  *
- * @file       defaultccattitudewidget.h
+ * @file       uavobjects_global.h
  * @author     The OpenPilot Team, http://www.openpilot.org Copyright (C) 2010.
  * @addtogroup GCSPlugins GCS Plugins
  * @{
- * @addtogroup ConfigPlugin Config Plugin
+ * @addtogroup UAVTalkPlugin UAVTalk Plugin
  * @{
- * @brief Placeholder for attitude settings widget until board connected.
+ * @brief The UAVTalk protocol plugin
  *****************************************************************************/
 /*
  * This program is free software; you can redistribute it and/or modify
@@ -24,31 +24,16 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-#ifndef DEFAULTHWSETTINGSt_H
-#define DEFAULTHWSETTINGSt_H
 
-#include "ui_defaulthwsettings.h"
-#include "uavobjectwidgetutils/configtaskwidget.h"
-#include "extensionsystem/pluginmanager.h"
-#include "uavobjects/uavobjectmanager.h"
-#include "uavobjects/uavobject.h"
-#include <QWidget>
-#include <QTimer>
-#include <QMutex>
+#ifndef UAVTALK_GLOBAL_H
+#define UAVTALK_GLOBAL_H
 
-class Ui_Widget;
+#include <QtCore/qglobal.h>
 
-class DefaultHwSettingsWidget : public QWidget {
-    Q_OBJECT
+#if defined(UAVTALK_LIBRARY)
+#  define UAVTALK_EXPORT Q_DECL_EXPORT
+#else
+#  define UAVTALK_EXPORT Q_DECL_IMPORT
+#endif
 
-public:
-    explicit DefaultHwSettingsWidget(QWidget *parent = 0);
-    ~DefaultHwSettingsWidget();
-
-private slots:
-
-private:
-    Ui_defaulthwsettings *ui;
-};
-
-#endif // DEFAULTHWSETTINGSt_H
+#endif // UAVTALK_GLOBAL_H

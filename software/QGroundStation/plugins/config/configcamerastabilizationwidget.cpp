@@ -34,10 +34,10 @@
  */
 
 #include "configcamerastabilizationwidget.h"
-#include "camerastabsettings.h"
-#include "hwsettings.h"
-#include "mixersettings.h"
-#include "actuatorcommand.h"
+#include "uavobjects/gcs/camerastabsettings.h"
+#include "uavobjects/gcs/hwsettings.h"
+#include "uavobjects/gcs/mixersettings.h"
+#include "uavobjects/gcs/actuatorcommand.h"
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>
 

@@ -1,8 +1,8 @@
 #include "inputchannelform.h"
 #include "ui_inputchannelform.h"
 
-#include "manualcontrolsettings.h"
-#include "gcsreceiver.h"
+#include "uavobjects/gcs/manualcontrolsettings.h"
+#include "uavobjects/gcs/gcsreceiver.h"
 
 InputChannelForm::InputChannelForm(const int index, QWidget *parent) :
     ChannelForm(index, parent), ui(new Ui::InputChannelForm)

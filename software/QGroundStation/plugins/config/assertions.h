@@ -24,7 +24,7 @@
 #ifndef AHRS_ASSERTIONS_HPP
 #define AHRS_ASSERTIONS_HPP
 
-#include <Eigen/Core>
+#include <eigen/Eigen/Core>
 #include <cmath>
 
 template<typename MatrixBase>

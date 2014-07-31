@@ -25,7 +25,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 #include "configcustomwidget.h"
-#include "mixersettings.h"
+#include "uavobjects/gcs/mixersettings.h"
 
 #include <QDebug>
 #include <QStringList>

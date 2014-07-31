@@ -25,9 +25,9 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 #include "configccpmwidget.h"
-#include "mixersettings.h"
-#include "systemsettings.h"
-#include "actuatorcommand.h"
+#include "uavobjects/gcs/mixersettings.h"
+#include "uavobjects/gcs/systemsettings.h"
+#include "uavobjects/gcs/actuatorcommand.h"
 
 #include <QDebug>
 #include <QStringList>

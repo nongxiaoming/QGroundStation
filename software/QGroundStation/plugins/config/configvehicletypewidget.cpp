@@ -25,8 +25,8 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 #include "configvehicletypewidget.h"
-#include "systemsettings.h"
-#include "actuatorsettings.h"
+#include "uavobjects/gcs/systemsettings.h"
+#include "uavobjects/gcs/actuatorsettings.h"
 
 #include "cfg_vehicletypes/configccpmwidget.h"
 #include "cfg_vehicletypes/configfixedwingwidget.h"

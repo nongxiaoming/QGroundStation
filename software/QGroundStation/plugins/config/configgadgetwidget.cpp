@@ -40,7 +40,7 @@
 #include "configrevowidget.h"
 #include "defaultattitudewidget.h"
 #include "defaulthwsettingswidget.h"
-#include "uavobjectutilmanager.h"
+#include "uavobjectutil/uavobjectutilmanager.h"
 
 #include <uavtalk/telemetrymanager.h>
 

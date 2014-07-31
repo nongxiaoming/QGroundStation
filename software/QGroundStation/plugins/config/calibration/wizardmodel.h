@@ -29,7 +29,7 @@
 #define WIZARDMODEL_H
 
 #include "wizardstate.h"
-#include <accelsensor.h>
+#include <uavobjects/gcs/accelsensor.h>
 
 #include <QStateMachine>
 #include <QQmlListProperty>

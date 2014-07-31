@@ -26,8 +26,8 @@
  */
 
 #include "configtxpidwidget.h"
-#include "txpidsettings.h"
-#include "hwsettings.h"
+#include "uavobjects/gcs/txpidsettings.h"
+#include "uavobjects/gcs/hwsettings.h"
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>
 

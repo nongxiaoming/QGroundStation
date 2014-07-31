@@ -29,7 +29,7 @@
 #include <QDebug>
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>
-#include "hwsettings.h"
+#include "uavobjects/gcs/hwsettings.h"
 #include <QDesktopServices>
 #include <QUrl>
 #include <QMessageBox>

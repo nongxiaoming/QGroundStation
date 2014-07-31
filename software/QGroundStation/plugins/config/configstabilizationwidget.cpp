@@ -40,8 +40,8 @@
 
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>
-#include "altitudeholdsettings.h"
-#include "stabilizationsettings.h"
+#include "uavobjects/gcs/altitudeholdsettings.h"
+#include "uavobjects/gcs/stabilizationsettings.h"
 
 ConfigStabilizationWidget::ConfigStabilizationWidget(QWidget *parent) : ConfigTaskWidget(parent),
     boardModel(0), m_pidBankCount(0), m_currentPIDBank(0)

@@ -1,13 +1,13 @@
 /**
  ******************************************************************************
  *
- * @file       defaultccattitudewidget.h
+ * @file       uavtalkplugin.h
  * @author     The OpenPilot Team, http://www.openpilot.org Copyright (C) 2010.
  * @addtogroup GCSPlugins GCS Plugins
  * @{
- * @addtogroup ConfigPlugin Config Plugin
+ * @addtogroup UAVTalkPlugin UAVTalk Plugin
  * @{
- * @brief Placeholder for attitude settings widget until board connected.
+ * @brief The UAVTalk protocol plugin
  *****************************************************************************/
 /*
  * This program is free software; you can redistribute it and/or modify
@@ -24,31 +24,37 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-#ifndef DEFAULTHWSETTINGSt_H
-#define DEFAULTHWSETTINGSt_H
+#ifndef UAVTALKPLUGIN_H
+#define UAVTALKPLUGIN_H
 
-#include "ui_defaulthwsettings.h"
-#include "uavobjectwidgetutils/configtaskwidget.h"
-#include "extensionsystem/pluginmanager.h"
+#include <extensionsystem/iplugin.h>
+#include <extensionsystem/pluginmanager.h>
+#include <QtPlugin>
+#include "telemetrymonitor.h"
+#include "telemetry.h"
+#include "uavtalk.h"
+#include "telemetrymanager.h"
 #include "uavobjects/uavobjectmanager.h"
-#include "uavobjects/uavobject.h"
-#include <QWidget>
-#include <QTimer>
-#include <QMutex>
 
-class Ui_Widget;
-
-class DefaultHwSettingsWidget : public QWidget {
+class UAVTALK_EXPORT UAVTalkPlugin : public ExtensionSystem::IPlugin {
     Q_OBJECT
+                     Q_PLUGIN_METADATA(IID "OpenPilot.UAVTalk")
 
 public:
-    explicit DefaultHwSettingsWidget(QWidget *parent = 0);
-    ~DefaultHwSettingsWidget();
+    UAVTalkPlugin();
+    ~UAVTalkPlugin();
 
-private slots:
+    void extensionsInitialized();
+    bool initialize(const QStringList & arguments, QString *errorString);
+    void shutdown();
+
+protected slots:
+    void onDeviceConnect(QIODevice *dev);
+    void onDeviceDisconnect();
 
 private:
-    Ui_defaulthwsettings *ui;
+    UAVObjectManager *objMngr;
+    TelemetryManager *telMngr;
 };
 
-#endif // DEFAULTHWSETTINGSt_H
+#endif // UAVTALKPLUGIN_H

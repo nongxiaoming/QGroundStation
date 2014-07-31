@@ -29,10 +29,10 @@
 
 #include "cfg_vehicletypes/vehicleconfig.h"
 #include "ui_airframe_ccpm.h"
-#include "../uavobjectwidgetutils/configtaskwidget.h"
+#include "uavobjectwidgetutils/configtaskwidget.h"
 #include "extensionsystem/pluginmanager.h"
-#include "uavobjectmanager.h"
-#include "uavobject.h"
+#include "uavobjects/uavobjectmanager.h"
+#include "uavobjects/uavobject.h"
 
 #include <QtSvg/QSvgRenderer>
 #include <QtSvg/QGraphicsSvgItem>

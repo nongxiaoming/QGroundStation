@@ -26,13 +26,13 @@
  */
 #include "configrevowidget.h"
 
-#include <attitudestate.h>
-#include <attitudesettings.h>
-#include <revocalibration.h>
-#include <accelgyrosettings.h>
-#include <homelocation.h>
-#include <accelstate.h>
-#include <magstate.h>
+#include <uavobjects/gcs/attitudestate.h>
+#include <uavobjects/gcs/attitudesettings.h>
+#include <uavobjects/gcs/revocalibration.h>
+#include <uavobjects/gcs/accelgyrosettings.h>
+#include <uavobjects/gcs/homelocation.h>
+#include <uavobjects/gcs/accelstate.h>
+#include <uavobjects/gcs/magstate.h>
 
 #include <extensionsystem/pluginmanager.h>
 #include <coreplugin/generalsettings.h>

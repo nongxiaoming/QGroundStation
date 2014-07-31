@@ -29,8 +29,8 @@
 #include "extensionsystem/pluginmanager.h"
 #include "calibration/calibrationuiutils.h"
 
-#include <attitudestate.h>
-#include <attitudesettings.h>
+#include <uavobjects/gcs/attitudestate.h>
+#include <uavobjects/gcs/attitudesettings.h>
 
 static const int LEVEL_SAMPLES = 100;
 
