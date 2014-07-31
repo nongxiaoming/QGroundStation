@@ -33,8 +33,8 @@
 #ifndef DEBUGLOGENTRY_H
 #define DEBUGLOGENTRY_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT DebugLogEntry: public UAVDataObject
 {

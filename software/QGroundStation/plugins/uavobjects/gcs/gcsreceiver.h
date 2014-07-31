@@ -33,8 +33,8 @@
 #ifndef GCSRECEIVER_H
 #define GCSRECEIVER_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT GCSReceiver: public UAVDataObject
 {

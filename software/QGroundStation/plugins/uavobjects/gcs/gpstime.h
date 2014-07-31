@@ -33,8 +33,8 @@
 #ifndef GPSTIME_H
 #define GPSTIME_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT GPSTime: public UAVDataObject
 {

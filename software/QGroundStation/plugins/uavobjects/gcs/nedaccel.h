@@ -33,8 +33,8 @@
 #ifndef NEDACCEL_H
 #define NEDACCEL_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT NedAccel: public UAVDataObject
 {

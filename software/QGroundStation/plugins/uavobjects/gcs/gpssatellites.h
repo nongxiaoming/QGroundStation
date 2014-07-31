@@ -33,8 +33,8 @@
 #ifndef GPSSATELLITES_H
 #define GPSSATELLITES_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT GPSSatellites: public UAVDataObject
 {

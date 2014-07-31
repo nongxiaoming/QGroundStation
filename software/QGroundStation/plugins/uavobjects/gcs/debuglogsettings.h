@@ -33,8 +33,8 @@
 #ifndef DEBUGLOGSETTINGS_H
 #define DEBUGLOGSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT DebugLogSettings: public UAVDataObject
 {

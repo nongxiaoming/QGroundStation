@@ -33,8 +33,8 @@
 #ifndef ACTUATORSETTINGS_H
 #define ACTUATORSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT ActuatorSettings: public UAVDataObject
 {

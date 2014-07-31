@@ -33,8 +33,8 @@
 #ifndef REVOSETTINGS_H
 #define REVOSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT RevoSettings: public UAVDataObject
 {

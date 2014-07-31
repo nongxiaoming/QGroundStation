@@ -33,8 +33,8 @@
 #ifndef POILEARNSETTINGS_H
 #define POILEARNSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT PoiLearnSettings: public UAVDataObject
 {

@@ -33,8 +33,8 @@
 #ifndef AIRSPEEDSENSOR_H
 #define AIRSPEEDSENSOR_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT AirspeedSensor: public UAVDataObject
 {

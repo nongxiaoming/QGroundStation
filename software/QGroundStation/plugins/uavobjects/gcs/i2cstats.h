@@ -33,8 +33,8 @@
 #ifndef I2CSTATS_H
 #define I2CSTATS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT I2CStats: public UAVDataObject
 {

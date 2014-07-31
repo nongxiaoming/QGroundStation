@@ -33,8 +33,8 @@
 #ifndef CALLBACKINFO_H
 #define CALLBACKINFO_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT CallbackInfo: public UAVDataObject
 {

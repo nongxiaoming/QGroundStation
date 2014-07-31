@@ -33,8 +33,8 @@
 #ifndef MAGSTATE_H
 #define MAGSTATE_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT MagState: public UAVDataObject
 {

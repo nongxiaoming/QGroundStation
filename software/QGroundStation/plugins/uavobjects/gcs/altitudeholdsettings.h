@@ -33,8 +33,8 @@
 #ifndef ALTITUDEHOLDSETTINGS_H
 #define ALTITUDEHOLDSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT AltitudeHoldSettings: public UAVDataObject
 {

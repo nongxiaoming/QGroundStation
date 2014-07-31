@@ -33,8 +33,8 @@
 #ifndef REVOCALIBRATION_H
 #define REVOCALIBRATION_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT RevoCalibration: public UAVDataObject
 {

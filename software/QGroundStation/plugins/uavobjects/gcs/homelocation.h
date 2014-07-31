@@ -33,8 +33,8 @@
 #ifndef HOMELOCATION_H
 #define HOMELOCATION_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT HomeLocation: public UAVDataObject
 {

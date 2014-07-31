@@ -33,8 +33,8 @@
 #ifndef GCSTELEMETRYSTATS_H
 #define GCSTELEMETRYSTATS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT GCSTelemetryStats: public UAVDataObject
 {

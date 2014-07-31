@@ -33,8 +33,8 @@
 #ifndef HWSETTINGS_H
 #define HWSETTINGS_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT HwSettings: public UAVDataObject
 {
