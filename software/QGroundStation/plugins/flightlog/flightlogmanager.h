@@ -36,13 +36,13 @@
 #include <QXmlStreamWriter>
 #include <QTextStream>
 
-#include "uavobjectmanager.h"
-#include "uavobjectutilmanager.h"
-#include "debuglogentry.h"
-#include "debuglogstatus.h"
-#include "debuglogsettings.h"
-#include "debuglogcontrol.h"
-#include "objectpersistence.h"
+#include "uavobjects/uavobjectmanager.h"
+#include "uavobjectutil/uavobjectutilmanager.h"
+#include "uavobjects/gcs/debuglogentry.h"
+#include "uavobjects/gcs/debuglogstatus.h"
+#include "uavobjects/gcs/debuglogsettings.h"
+#include "uavobjects/gcs/debuglogcontrol.h"
+#include "uavobjects/gcs/objectpersistence.h"
 #include "uavtalk/telemetrymanager.h"
 
 class UAVOLogSettingsWrapper : public QObject {

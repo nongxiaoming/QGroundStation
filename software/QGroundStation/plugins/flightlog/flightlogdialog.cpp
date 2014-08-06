@@ -35,7 +35,7 @@
 #include <QQmlContext>
 
 #include "flightlogmanager.h"
-#include "uavobject.h"
+#include "uavobjects/uavobject.h"
 
 FlightLogDialog::FlightLogDialog(QWidget *parent, FlightLogManager *flightLogManager) :
     QDialog(parent)

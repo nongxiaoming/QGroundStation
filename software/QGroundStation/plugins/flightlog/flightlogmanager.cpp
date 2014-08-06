@@ -34,11 +34,11 @@
 #include <QMessageBox>
 #include <QDebug>
 
-#include "debuglogcontrol.h"
-#include "uavobjecthelper.h"
+#include "uavobjects/gcs/debuglogcontrol.h"
+#include "uavobjectutil/uavobjecthelper.h"
 #include "uavtalk/uavtalk.h"
 #include "utils/logfile.h"
-#include "uavdataobject.h"
+#include "uavobjects/uavdataobject.h"
 #include <uavobjectutil/uavobjectutilmanager.h>
 
 FlightLogManager::FlightLogManager(QObject *parent) :
