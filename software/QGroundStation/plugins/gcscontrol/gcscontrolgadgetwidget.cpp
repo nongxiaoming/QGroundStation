@@ -35,9 +35,9 @@
 #include <QPushButton>
 
 
-#include "uavobject.h"
-#include "uavobjectmanager.h"
-#include "manualcontrolcommand.h"
+#include "uavobjects/uavobject.h"
+#include "uavobjects/uavobjectmanager.h"
+#include "uavobjects/gcs/manualcontrolcommand.h"
 #include "extensionsystem/pluginmanager.h"
 
 GCSControlGadgetWidget::GCSControlGadgetWidget(QWidget *parent) : QLabel(parent)

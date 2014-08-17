@@ -29,7 +29,7 @@
 #define GCSControlGADGETWIDGET_H_
 
 #include <QLabel>
-#include "manualcontrolcommand.h"
+#include "uavobjects/gcs/manualcontrolcommand.h"
 
 #define UDP_PORT 2323
 
