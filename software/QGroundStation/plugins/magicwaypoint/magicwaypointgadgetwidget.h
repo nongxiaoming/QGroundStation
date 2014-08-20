@@ -29,8 +29,8 @@
 #define MagicWaypointGADGETWIDGET_H_
 
 #include <QLabel>
-#include "pathdesired.h"
-#include "positionstate.h"
+#include "uavobjects/gcs/pathdesired.h"
+#include "uavobjects/gcs/positionstate.h"
 
 class Ui_MagicWaypoint;
 

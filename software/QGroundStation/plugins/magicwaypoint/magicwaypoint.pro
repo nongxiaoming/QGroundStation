@@ -2,9 +2,7 @@ TEMPLATE = lib
 TARGET = MagicWaypoint 
 QT += svg
 
-include(../../openpilotgcsplugin.pri) 
-include(../../plugins/coreplugin/coreplugin.pri) 
-include(../../plugins/uavobjects/uavobjects.pri)
+include(../../common.pri)
 
 HEADERS += magicwaypointgadget.h
 HEADERS += magicwaypointgadgetwidget.h
@@ -23,3 +21,14 @@ OTHER_FILES += MagicWaypoint.pluginspec
 FORMS += magicwaypoint.ui
 
 RESOURCES += magicwaypoint.qrc
+
+#依赖的库文件
+LIBS += -l$$qtLibraryName(Aggregation)\
+        -l$$qtLibraryName(Core)\
+        -l$$qtLibraryName(ExtensionSystem)\
+        -l$$qtLibraryName(Utils)\
+        -l$$qtLibraryName(UAVObjects)
+
+
+#指定生成的plugin保存目录
+DESTDIR=$$PROJECT_PLUGINSDIR
