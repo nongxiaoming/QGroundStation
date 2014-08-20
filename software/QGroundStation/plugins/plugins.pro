@@ -22,3 +22,4 @@ SUBDIRS   = \
           uavsettingsimportexport\
           telemetry\
           uavtalk\
+          magicwaypoint
