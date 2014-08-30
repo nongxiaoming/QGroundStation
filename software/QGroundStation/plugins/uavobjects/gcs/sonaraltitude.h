@@ -33,8 +33,8 @@
 #ifndef SONARALTITUDE_H
 #define SONARALTITUDE_H
 
-#include "uavdataobject.h"
-#include "uavobjectmanager.h"
+#include "uavobjects/uavdataobject.h"
+#include "uavobjects/uavobjectmanager.h"
 
 class UAVOBJECTS_EXPORT SonarAltitude: public UAVDataObject
 {
