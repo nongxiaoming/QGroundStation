@@ -3,13 +3,15 @@ TARGET = ExtensionSystem
 DEFINES += EXTENSIONSYSTEM_LIBRARY
 
 include(../../common.pri)
-#include(extensionsystem_dependencies.pri)
+
 
 unix:!macx:!freebsd*:LIBS += -ldl
 
 DEFINES += GCS_TEST_DIR=\\\"$$GCS_SOURCE_TREE\\\"
 
-QT += widgets
+QT +=  core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 HEADERS += pluginerrorview.h \
     plugindetailsview.h \
