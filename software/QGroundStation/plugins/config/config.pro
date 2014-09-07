@@ -6,7 +6,7 @@ QT += svg opengl qml quick
 
 include(../../common.pri)
 
-INCLUDEPATH += ../../libs/eigen
+INCLUDEPATH += ../../thirdparty/eigen
 
 OTHER_FILES += \
     Config.pluginspec \
@@ -128,7 +128,14 @@ RESOURCES += configgadget.qrc
 LIBS += -l$$qtLibraryName(Core)\
         -l$$qtLibraryName(Aggregation)\
         -l$$qtLibraryName(Utils)\
-        -l$$qtLibraryName(UAVObjects)\
         -l$$qtLibraryName(ExtensionSystem)\
+        -l$$qtLibraryName(UAVObjects)\
+        -l$$qtLibraryName(UAVObjectUtil)\
+        -l$$qtLibraryName(Telemetry)\
+        -l$$qtLibraryName(UAVTalk)\
+        -l$$qtLibraryName(UAVSettingsImportExport)\
+        -l$$qtLibraryName(UAVObjectWidgetUtils)\
+        -l$$qtLibraryName(VersionInfo)
+
 #指定生成的plugin保存目录
 DESTDIR=$$PROJECT_PLUGINSDIR
