@@ -57,3 +57,6 @@ OTHER_FILES += \
     sdlgamepad.doc
 
 include(copydata.pro)
+
+#指定生成的lib保存目录
+DESTDIR=$$PROJECT_LIBRARYDIR
