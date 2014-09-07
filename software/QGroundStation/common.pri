@@ -92,7 +92,8 @@ message(BASEDIR $$BASEDIR DESTDIR $$DESTDIR TARGET $$TARGET)
 #包含的头文件目录
 INCLUDEPATH += $${PWD}/libraries\
                $${PWD}/plugins
-
+#SDL库目录
+SDL_DIR = $${PWD}/thirdparty/SDL-1.2.15
 #需要用到的库
 LIBS +=-L$$PROJECT_LIBRARYDIR
 LIBS +=-L$$PROJECT_PLUGINSDIR
