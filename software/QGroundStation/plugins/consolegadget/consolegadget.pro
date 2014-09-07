@@ -1,7 +1,7 @@
 TEMPLATE = lib
 TARGET = ConsoleGadget
 
-QT +=  core gui
+QT +=  core gui Qxt
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,6 +23,7 @@ OTHER_FILES += ConsoleGadget.pluginspec
 LIBS += -l$$qtLibraryName(Core)\
         -l$$qtLibraryName(Aggregation)\
         -l$$qtLibraryName(Utils)\
-        -l$$qtLibraryName(ExtensionSystem)\
+        -l$$qtLibraryName(ExtensionSystem)
+
 #指定生成的plugin保存目录
 DESTDIR=$$PROJECT_PLUGINSDIR

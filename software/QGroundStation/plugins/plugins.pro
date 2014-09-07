@@ -9,7 +9,6 @@ SUBDIRS   = \
       gpsdisplay\
       ophid\
 	  config\
-	  consolegadget\
 	  debuggadget\
 	  antennatrack\
 	  donothing\
