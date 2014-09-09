@@ -28,10 +28,10 @@
 
 #ifndef CALIBRATIONUTILS_H
 #define CALIBRATIONUTILS_H
-#include <eigen/Eigen/Core>
-#include <eigen/Eigen/Eigenvalues>
-#include <eigen/Eigen/Dense>
-#include <eigen/Eigen/LU>
+#include <Eigen/Core>
+#include <Eigen/Eigenvalues>
+#include <Eigen/Dense>
+#include <Eigen/LU>
 #include <QList>
 namespace OpenPilot {
 class CalibrationUtils {
