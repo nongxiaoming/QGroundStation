@@ -85,7 +85,6 @@ INCLUDEPATH +=.
 
 #用到的lib
 LIBS +=-l$$qtLibraryName(QChart)\
-       -l$$qtLibraryName(PFDGadget)\
        -l$$qtLibraryName(Core)\
        -l$$qtLibraryName(DialGadget)\
        -l$$qtLibraryName(VersionInfo)\
