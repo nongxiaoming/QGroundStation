@@ -21,4 +21,6 @@ SUBDIRS   = \
           uavsettingsimportexport\
           telemetry\
           uavtalk\
-          magicwaypoint
+          magicwaypoint\
+          ipconnection\
+		  pfdqml
