@@ -23,4 +23,7 @@ SUBDIRS   = \
           uavtalk\
           magicwaypoint\
           ipconnection\
-		  pfdqml
+          pfdqml\
+          scope\
+          importexport\
+          lineardial

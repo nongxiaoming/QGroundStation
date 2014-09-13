@@ -39,4 +39,4 @@ LIBS *= -l$$qtLibraryName(Aggregation)\
         -l$$qtLibraryName(UAVObjects)\
 
 #指定生成的plugin保存目录
-DESTDIR=$$PROJECT_PLUGINSDIR
+DESTDIR=$${PROJECT_PLUGINSDIR}
