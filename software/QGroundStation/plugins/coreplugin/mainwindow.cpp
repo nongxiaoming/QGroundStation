@@ -299,7 +299,7 @@ QString MainWindow::loadStyleSheet(QString fileName)
 #else
     dir.cdUp();
     dir.cd("share");
-    dir.cd("openpilotgcs");
+    dir.cd("QGroundStation");
 #endif
     dir.cd("stylesheets");
     QString style;
