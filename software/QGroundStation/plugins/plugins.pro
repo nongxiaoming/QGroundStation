@@ -28,4 +28,5 @@ SUBDIRS   = \
           scope\
           importexport\
           lineardial\
-          systemhealth
+          systemhealth\
+          uploader
