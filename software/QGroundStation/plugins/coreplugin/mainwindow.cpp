@@ -303,7 +303,7 @@ QString MainWindow::loadStyleSheet(QString fileName)
 #endif
     dir.cd("stylesheets");
     QString style;
-    // ...to open the file
+    //读取qss风格文件
     QFile file(dir.absolutePath() + QDir::separator() + fileName);
     qDebug() << "Loading style sheet file" << file.fileName();
     if (file.open(QFile::ReadOnly)) {
