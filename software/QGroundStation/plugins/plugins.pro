@@ -26,4 +26,5 @@ SUBDIRS   = \
           pfdqml\
           scope\
           importexport\
-          lineardial
+          lineardial\
+          systemhealth
