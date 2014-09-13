@@ -29,4 +29,5 @@ SUBDIRS   = \
           importexport\
           lineardial\
           systemhealth\
-          uploader
+          uploader\
+          setupwizard
