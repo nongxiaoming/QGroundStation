@@ -30,4 +30,5 @@ SUBDIRS   = \
           lineardial\
           systemhealth\
           uploader\
-          setupwizard
+          setupwizard\
+          notify
