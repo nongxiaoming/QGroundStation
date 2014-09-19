@@ -33,4 +33,5 @@ SUBDIRS   = \
       setupwizard\
       notify\
       qmlview\
-      welcome
+      welcome\
+      pathactioneditor
