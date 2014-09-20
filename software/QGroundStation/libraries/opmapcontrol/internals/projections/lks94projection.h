@@ -28,7 +28,7 @@
 #define LKS94PROJECTION_H
 #include <QVector>
 #include "cmath"
-#include <opmapcontrol/src/internals/pureprojection.h>
+#include <internals/pureprojection.h>
 
 
 namespace projections {
