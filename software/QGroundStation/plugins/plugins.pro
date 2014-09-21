@@ -25,6 +25,7 @@ SUBDIRS   = \
       magicwaypoint\
       ipconnection\
       pfdqml\
+      pfd\
       scope\
       importexport\
       lineardial\
