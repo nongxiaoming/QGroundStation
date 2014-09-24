@@ -1,7 +1,7 @@
 TEMPLATE = lib
 TARGET = OPMapControl
 
-QT +=  core gui network sql
+QT +=  core gui network sql opengl svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -109,5 +109,9 @@ SOURCES += core/alllayersoftype.cpp \
            mapwidget/waypointlineitem.cpp
 RESOURCES += mapwidget/mapresources.qrc
 
+
+#依赖的库文件
+LIBS += -l$$qtLibraryName(Utils)
+
 #指定生成的lib保存目录
-DESTDIR=$$PROJECT_LIBRARYDIR
+DESTDIR=$${PROJECT_LIBRARYDIR}

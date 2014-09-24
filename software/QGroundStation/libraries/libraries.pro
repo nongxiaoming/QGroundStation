@@ -11,4 +11,5 @@ SUBDIRS   = \
     qwt\
 	qchart\
 extensionsystem\
-sdlgamepad
+sdlgamepad\
+opmapcontrol

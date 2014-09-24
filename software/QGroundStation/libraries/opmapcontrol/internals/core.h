@@ -1,40 +1,40 @@
 /**
- ******************************************************************************
- *
- * @file       core.h
- * @author     The OpenPilot Team, http://www.openpilot.org Copyright (C) 2012.
- * @brief
- * @see        The GNU Public License (GPL) Version 3
- * @defgroup   OPMapWidget
- * @{
- *
- *****************************************************************************/
-/*
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
- * for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
- */
+******************************************************************************
+*
+* @file       core.h
+* @author     The OpenPilot Team, http://www.openpilot.org Copyright (C) 2010.
+* @brief      
+* @see        The GNU Public License (GPL) Version 3
+* @defgroup   OPMapWidget
+* @{
+* 
+*****************************************************************************/
+/* 
+* This program is free software; you can redistribute it and/or modify 
+* it under the terms of the GNU General Public License as published by 
+* the Free Software Foundation; either version 3 of the License, or 
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful, but 
+* WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+* or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 
+* for more details.
+* 
+* You should have received a copy of the GNU General Public License along 
+* with this program; if not, write to the Free Software Foundation, Inc., 
+* 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+*/
 #ifndef CORE_H
 #define CORE_H
 
 #include "debugheader.h"
 
-#include "../internals/pointlatlng.h"
+#include "internals/pointlatlng.h"
 #include "mousewheelzoomtype.h"
-#include "../core/size.h"
-#include "../core/point.h"
+#include "core/size.h"
+#include "core/point.h"
 
-#include "../core/maptype.h"
+#include "core/maptype.h"
 #include "rectangle.h"
 #include "QThreadPool"
 #include "tilematrix.h"
@@ -42,14 +42,14 @@
 #include "loadtask.h"
 #include "copyrightstrings.h"
 #include "rectlatlng.h"
-#include "../internals/projections/lks94projection.h"
-#include "../internals/projections/mercatorprojection.h"
-#include "../internals/projections/mercatorprojectionyandex.h"
-#include "../internals/projections/platecarreeprojection.h"
-#include "../internals/projections/platecarreeprojectionpergo.h"
-#include "../core/geodecoderstatus.h"
-#include "../core/opmaps.h"
-#include "../core/diagnostics.h"
+#include "internals/projections/lks94projection.h"
+#include "internals/projections/mercatorprojection.h"
+#include "internals/projections/mercatorprojectionyandex.h"
+#include "internals/projections/platecarreeprojection.h"
+#include "internals/projections/platecarreeprojectionpergo.h"
+#include "core/geodecoderstatus.h"
+#include "core/opmaps.h"
+#include "core/diagnostics.h"
 
 #include <QSemaphore>
 #include <QThread>
@@ -57,340 +57,227 @@
 
 #include <QObject>
 
-namespace mapcontrol {
-class OPMapControl;
-class MapGraphicItem;
+namespace mapcontrol
+{
+    class OPMapControl;
+    class MapGraphicItem;
 }
 
 namespace internals {
-class Core : public QObject, public QRunnable {
-    Q_OBJECT
 
-    friend class mapcontrol::OPMapControl;
-    friend class mapcontrol::MapGraphicItem;
-public:
-    Core();
-    ~Core();
-    void run();
-    PointLatLng CurrentPosition() const
+    class Core:public QObject,public QRunnable
     {
-        return currentPosition;
-    }
+        Q_OBJECT
 
-    void SetCurrentPosition(const PointLatLng &value);
+        friend class mapcontrol::OPMapControl;
+        friend class mapcontrol::MapGraphicItem;
+    public:
+        Core();
+        ~Core();
+        void run();
+        PointLatLng CurrentPosition()const{return currentPosition;}
 
-    core::Point GetcurrentPositionGPixel()
-    {
-        return currentPositionPixel;
-    }
-    void SetcurrentPositionGPixel(const core::Point &value)
-    {
-        currentPositionPixel = value;
-    }
+        void SetCurrentPosition(const PointLatLng &value);
 
-    core::Point GetrenderOffset()
-    {
-        return renderOffset;
-    }
-    void SetrenderOffset(const core::Point &value)
-    {
-        renderOffset = value;
-    }
+        core::Point GetcurrentPositionGPixel(){return currentPositionPixel;}
+        void SetcurrentPositionGPixel(const core::Point &value){currentPositionPixel=value;}
 
-    core::Point GetcenterTileXYLocation()
-    {
-        return centerTileXYLocation;
-    }
-    void SetcenterTileXYLocation(const core::Point &value)
-    {
-        centerTileXYLocation = value;
-    }
+        core::Point GetrenderOffset(){return renderOffset;}
+        void SetrenderOffset(const core::Point &value){renderOffset=value;}
 
-    core::Point GetcenterTileXYLocationLast()
-    {
-        return centerTileXYLocationLast;
-    }
-    void SetcenterTileXYLocationLast(const core::Point &value)
-    {
-        centerTileXYLocationLast = value;
-    }
+        core::Point GetcenterTileXYLocation(){return centerTileXYLocation;}
+        void SetcenterTileXYLocation(const core::Point &value){centerTileXYLocation=value;}
 
-    core::Point GetdragPoint()
-    {
-        return dragPoint;
-    }
-    void SetdragPoint(const core::Point &value)
-    {
-        dragPoint = value;
-    }
+        core::Point GetcenterTileXYLocationLast(){return centerTileXYLocationLast;}
+        void SetcenterTileXYLocationLast(const core::Point &value){centerTileXYLocationLast=value;}
 
-    core::Point GetmouseDown()
-    {
-        return mouseDown;
-    }
-    void SetmouseDown(const core::Point &value)
-    {
-        mouseDown = value;
-    }
+        core::Point GetdragPoint(){return dragPoint;}
+        void SetdragPoint(const core::Point &value){dragPoint=value;}
 
-    core::Point GetmouseCurrent()
-    {
-        return mouseCurrent;
-    }
-    void SetmouseCurrent(const core::Point &value)
-    {
-        mouseCurrent = value;
-    }
+        core::Point GetmouseDown(){return mouseDown;}
+        void SetmouseDown(const core::Point &value){mouseDown=value;}
 
-    core::Point GetmouseLastZoom()
-    {
-        return mouseLastZoom;
-    }
-    void SetmouseLastZoom(const core::Point &value)
-    {
-        mouseLastZoom = value;
-    }
+        core::Point GetmouseCurrent(){return mouseCurrent;}
+        void SetmouseCurrent(const core::Point &value){mouseCurrent=value;}
 
-    MouseWheelZoomType::Types GetMouseWheelZoomType()
-    {
-        return mousewheelzoomtype;
-    }
-    void SetMouseWheelZoomType(const MouseWheelZoomType::Types &value)
-    {
-        mousewheelzoomtype = value;
-    }
+        core::Point GetmouseLastZoom(){return mouseLastZoom;}
+        void SetmouseLastZoom(const core::Point &value){mouseLastZoom=value;}
 
-    PointLatLng GetLastLocationInBounds()
-    {
-        return LastLocationInBounds;
-    }
-    void SetLastLocationInBounds(const PointLatLng &value)
-    {
-        LastLocationInBounds = value;
-    }
+        MouseWheelZoomType::Types GetMouseWheelZoomType(){return mousewheelzoomtype;}
+        void SetMouseWheelZoomType(const MouseWheelZoomType::Types &value){mousewheelzoomtype=value;}
 
-    Size GetsizeOfMapArea()
-    {
-        return sizeOfMapArea;
-    }
-    void SetsizeOfMapArea(const Size &value)
-    {
-        sizeOfMapArea = value;
-    }
+        PointLatLng GetLastLocationInBounds(){return LastLocationInBounds;}
+        void SetLastLocationInBounds(const PointLatLng &value){LastLocationInBounds=value;}
 
-    Size GetminOfTiles()
-    {
-        return minOfTiles;
-    }
-    void SetminOfTiles(const Size &value)
-    {
-        minOfTiles = value;
-    }
+        Size GetsizeOfMapArea(){return sizeOfMapArea;}
+        void SetsizeOfMapArea(const Size &value){sizeOfMapArea=value;}
 
-    Size GetmaxOfTiles()
-    {
-        return maxOfTiles;
-    }
-    void SetmaxOfTiles(const Size &value)
-    {
-        maxOfTiles = value;
-    }
+        Size GetminOfTiles(){return minOfTiles;}
+        void SetminOfTiles(const Size &value){minOfTiles=value;}
 
-    Rectangle GettileRect()
-    {
-        return tileRect;
-    }
-    void SettileRect(const Rectangle &value)
-    {
-        tileRect = value;
-    }
+        Size GetmaxOfTiles(){return maxOfTiles;}
+        void SetmaxOfTiles(const Size &value){maxOfTiles=value;}
 
-    core::Point GettilePoint()
-    {
-        return tilePoint;
-    }
-    void SettilePoint(const core::Point &value)
-    {
-        tilePoint = value;
-    }
+        Rectangle GettileRect(){return tileRect;}
+        void SettileRect(const Rectangle &value){tileRect=value;}
 
-    Rectangle GetCurrentRegion()
-    {
-        return CurrentRegion;
-    }
-    void SetCurrentRegion(const Rectangle &value)
-    {
-        CurrentRegion = value;
-    }
+        core::Point GettilePoint(){return tilePoint;}
+        void SettilePoint(const core::Point &value){tilePoint=value;}
 
-    QList<core::Point> tileDrawingList;
+        Rectangle GetCurrentRegion(){return CurrentRegion;}
+        void SetCurrentRegion(const Rectangle &value){CurrentRegion=value;}
 
-    PureProjection *Projection()
-    {
-        return projection;
-    }
-    void SetProjection(PureProjection *value)
-    {
-        projection = value;
-        tileRect   = Rectangle(core::Point(0, 0), value->TileSize());
-    }
-    bool IsDragging() const
-    {
-        return isDragging;
-    }
+        QList<core::Point> tileDrawingList;
 
-    int Zoom() const
-    {
-        return zoom;
-    }
-    void SetZoom(int const & value);
+        PureProjection* Projection()
+        {
+            return projection;
+        }
+        void SetProjection(PureProjection* value)
+        {
+            projection=value;
+            tileRect=Rectangle(core::Point(0,0),value->TileSize());
+        }
+        bool IsDragging()const{return isDragging;}
 
-    int MaxZoom() const
-    {
-        return maxzoom;
-    }
+        int Zoom()const{return zoom;}
+        void SetZoom(int const& value);
 
-    void UpdateBounds();
+        int MaxZoom()const{return maxzoom;}
 
-    MapType::Types GetMapType()
-    {
-        return mapType;
-    }
-    void SetMapType(MapType::Types const & value);
+        void UpdateBounds();
 
-    void StartSystem();
+        MapType::Types GetMapType(){return mapType;}
+        void SetMapType(MapType::Types const& value);
 
-    void UpdateCenterTileXYLocation();
+        void StartSystem();
 
-    void OnMapSizeChanged(int const & width, int const & height); // TODO had as slot
+        void UpdateCenterTileXYLocation();
 
-    void OnMapClose(); // TODO had as slot
+        void OnMapSizeChanged(int const& width, int const& height);//TODO had as slot
 
-    GeoCoderStatusCode::Types SetCurrentPositionByKeywords(QString const & keys);
+        void OnMapClose();//TODO had as slot
 
-    RectLatLng CurrentViewArea();
+        GeoCoderStatusCode::Types SetCurrentPositionByKeywords(QString const& keys);
 
-    PointLatLng FromLocalToLatLng(int const & x, int const & y);
+        RectLatLng CurrentViewArea();
 
-    Point FromLatLngToLocal(PointLatLng const & latlng);
+        PointLatLng FromLocalToLatLng(int const& x, int const& y);
 
-    int GetMaxZoomToFitRect(RectLatLng const & rect);
+        Point FromLatLngToLocal(PointLatLng const& latlng);
 
-    void BeginDrag(core::Point const & pt);
+        int GetMaxZoomToFitRect(RectLatLng const& rect);
 
-    void EndDrag();
+        void BeginDrag(core::Point const& pt);
 
-    void ReloadMap();
+        void EndDrag();
 
-    void GoToCurrentPosition();
+        void ReloadMap();
 
-    bool MouseWheelZooming;
+        void GoToCurrentPosition();
 
-    void DragOffset(core::Point const & offset);
+        bool MouseWheelZooming;
 
-    void Drag(core::Point const & pt);
+        void DragOffset(core::Point const& offset);
 
-    void CancelAsyncTasks();
+        void Drag(core::Point const& pt);
 
-    void FindTilesAround(QList<core::Point> &list);
+        void CancelAsyncTasks();
 
-    void UpdateGroundResolution();
+        void FindTilesAround(QList<core::Point> &list);
 
-    TileMatrix Matrix;
+        void UpdateGroundResolution();
 
-    bool isStarted()
-    {
-        return started;
-    }
+        TileMatrix Matrix;
 
-    diagnostics GetDiagnostics();
+        bool isStarted(){return started;}
 
-signals:
-    void OnCurrentPositionChanged(internals::PointLatLng point);
-    void OnTileLoadComplete();
-    void OnTilesStillToLoad(int number);
-    void OnTileLoadStart();
-    void OnMapDrag();
-    void OnMapZoomChanged();
-    void OnMapTypeChanged(MapType::Types type);
-    void OnEmptyTileError(int zoom, core::Point pos);
-    void OnNeedInvalidation();
+        diagnostics GetDiagnostics();
+    signals:
+        void OnCurrentPositionChanged(internals::PointLatLng point);
+        void OnTileLoadComplete();
+        void OnTilesStillToLoad(int number);
+        void OnTileLoadStart();
+        void OnMapDrag();
+        void OnMapZoomChanged();
+        void OnMapTypeChanged(MapType::Types type);
+        void OnEmptyTileError(int zoom, core::Point pos);
+        void OnNeedInvalidation();
 
-private:
-
-    void keepInBounds();
-    PointLatLng currentPosition;
-    core::Point currentPositionPixel;
-    core::Point renderOffset;
-    core::Point centerTileXYLocation;
-    core::Point centerTileXYLocationLast;
-    core::Point dragPoint;
-    Rectangle tileRect;
-    core::Point mouseDown;
-    bool CanDragMap;
-    core::Point mouseCurrent;
-    PointLatLng LastLocationInBounds;
-    core::Point mouseLastZoom;
-
-    MouseWheelZoomType::Types mousewheelzoomtype;
+    private:
 
 
-    Size sizeOfMapArea;
-    Size minOfTiles;
-    Size maxOfTiles;
+        PointLatLng currentPosition;
+        core::Point currentPositionPixel;
+        core::Point renderOffset;
+        core::Point centerTileXYLocation;
+        core::Point centerTileXYLocationLast;
+        core::Point dragPoint;
+        Rectangle tileRect;
+        core::Point mouseDown;
+        bool CanDragMap;
+        core::Point mouseCurrent;
+        PointLatLng LastLocationInBounds;
+        core::Point mouseLastZoom;
 
-    core::Point tilePoint;
+        MouseWheelZoomType::Types mousewheelzoomtype;
 
-    Rectangle CurrentRegion;
 
-    QQueue<LoadTask> tileLoadQueue;
+        Size sizeOfMapArea;
+        Size minOfTiles;
+        Size maxOfTiles;
 
-    int zoom;
+        core::Point tilePoint;
 
-    PureProjection *projection;
+        Rectangle CurrentRegion;
 
-    bool isDragging;
+        QQueue<LoadTask> tileLoadQueue;
 
-    QMutex MtileLoadQueue;
+        int zoom;
 
-    QMutex Moverlays;
+        PureProjection* projection;
 
-    QMutex MtileDrawingList;
+        bool isDragging;
+
+        QMutex MtileLoadQueue;
+
+        QMutex Moverlays;
+
+        QMutex MtileDrawingList;
 #ifdef DEBUG_CORE
-    QMutex Mdebug;
-    static qlonglong debugcounter;
+        QMutex Mdebug;
+        static qlonglong debugcounter;
 #endif
-    Size TooltipTextPadding;
+        Size TooltipTextPadding;
 
-    MapType::Types mapType;
+        MapType::Types mapType;
 
-    QSemaphore loaderLimit;
+        QSemaphore loaderLimit;
 
-    QThreadPool ProcessLoadTaskCallback;
-    QMutex MtileToload;
-    int tilesToload;
+        QThreadPool ProcessLoadTaskCallback;
+        QMutex MtileToload;
+        int tilesToload;
 
-    int maxzoom;
-    QMutex MrunningThreads;
-    int runningThreads;
-    diagnostics diag;
+        int maxzoom;
+        QMutex MrunningThreads;
+        int runningThreads;
+        diagnostics diag;
 
-protected:
-    bool started;
+    protected:
+        bool started;
 
-    int Width;
-    int Height;
-    int pxRes100m; // 100 meters
-    int pxRes1000m; // 1km
-    int pxRes10km; // 10km
-    int pxRes100km; // 100km
-    int pxRes1000km; // 1000km
-    int pxRes5000km; // 5000km
-    void SetCurrentPositionGPixel(core::Point const & value)
-    {
-        currentPositionPixel = value;
-    }
-    void GoToCurrentPositionOnZoom();
-};
+        int Width;
+        int Height;
+        int pxRes100m;  // 100 meters
+        int pxRes1000m;  // 1km
+        int pxRes10km; // 10km
+        int pxRes100km; // 100km
+        int pxRes1000km; // 1000km
+        int pxRes5000km; // 5000km
+        void SetCurrentPositionGPixel(core::Point const& value){currentPositionPixel = value;}
+        void GoToCurrentPositionOnZoom();
+
+    };
+
 }
 #endif // CORE_H

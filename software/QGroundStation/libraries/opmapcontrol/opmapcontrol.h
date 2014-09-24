@@ -1,6 +1,6 @@
 #ifndef OPMAP_CONTROL_H_
 #define OPMAP_CONTROL_H_
-#include "src/mapwidget/opmapwidget.h"
+#include "mapwidget/opmapwidget.h"
 namespace mapcontrol {
 struct customData {
     float velocity;
