@@ -7,7 +7,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 include(../../common.pri)
 
-include(uavobjectbrowser_dependencies.pri)
 HEADERS += browserplugin.h \
     uavobjectbrowserconfiguration.h \
     uavobjectbrowser.h \

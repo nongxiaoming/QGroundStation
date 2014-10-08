@@ -11,11 +11,6 @@ QT += qml \
     sql 
 
 include(../../common.pri)
-#include(../../libs/utils/utils.pri)
-#include(../../libs/version_info/version_info.pri)
-#include(../../shared/scriptwrapper/scriptwrapper.pri)
-#include(coreplugin_dependencies.pri)
-#include(authorsdialog.pri)
 
 INCLUDEPATH += dialogs \
     uavgadgetmanager \
