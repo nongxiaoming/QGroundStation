@@ -35,4 +35,5 @@ SUBDIRS   = \
       notify\
       qmlview\
       welcome\
-      pathactioneditor
+      pathactioneditor\
+      logging
